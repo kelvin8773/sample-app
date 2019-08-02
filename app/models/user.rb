@@ -12,7 +12,7 @@ class User < ApplicationRecord
   
   validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
 
-  has_secure_password
+  has_secure_password 
 
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   
@@ -43,8 +43,6 @@ class User < ApplicationRecord
   end
 
   def activate
-    # update_attribute(:activated, true)
-    # update_attribute(:activated_at, Time.zone.now)
     update_columns(activated: true, activated_at: Time.zone.now)
   end
 
