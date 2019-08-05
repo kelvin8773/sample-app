@@ -1,15 +1,25 @@
 <% provide(:title, @user.name )%>
 
-  <div class="card" style="width: 18rem">
-    <%= gravatar_for @user %>
-    <div class="card-body ">
-      <h4 class="card-title"> <%= @user.name %> </h4>
-      <ul class="list-group card-text">
-        <li class="list-group-item active">Created At: <%= @user.created_at %> </li>
-        <li class="list-group-item">Updated At: <%= @user.updated_at %> </li>
-      </ul>
-    </div>
+  <div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+  
+  <div class="col-md-8">
+    <% if @user.microposts.any? %>
+      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
   </div>
+</div>
 
 
 <h5 class="text-center"> Current Time: <%= Time.now %> </h5>
