@@ -36,4 +36,4 @@
 /spring/*.pid
 
 # Ignore dev/test upload files
-/public/uploads/*
+/public/uploads
