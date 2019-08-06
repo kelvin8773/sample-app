@@ -29,6 +29,6 @@ end
 users = User.order(:created_at).take(6)
 
 50.times do
-  content = Faker::Lorem.sentence(rand(3..12))
+  content = Faker::Lorem.sentence(5)
   users.each { |user| user.microposts.create!(content: content) }
 end
