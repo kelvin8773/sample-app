@@ -58,8 +58,8 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'capybara'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring'                
+  gem 'spring-watcher-listen', '>=2.0.0'
 end
 
 group :test do
@@ -69,11 +69,11 @@ group :test do
   gem 'webdrivers', '~> 3.0'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
-  gem 'rails-controller-testing', '1.0.2'
+  gem 'rails-controller-testing', '>=1.0.2'
   gem 'minitest'                  
-  gem 'minitest-reporters',       '1.1.14'
-  gem 'guard',                    '2.13.0'
-  gem 'guard-minitest',           '2.4.4'
+  gem 'minitest-reporters',       '>=1.1.14'
+  gem 'guard',                    '>=2.13.0'
+  gem 'guard-minitest',           '>=2.4.4'
 end
 
 group :production do
