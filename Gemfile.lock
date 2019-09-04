@@ -55,6 +55,10 @@ GEM
     bindex (0.8.1)
     bootsnap (1.4.4)
       msgpack (~> 1.0)
+    bootstrap (4.3.1)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 1.14.3, < 2)
+      sassc-rails (>= 2.0.0)
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
       sassc (>= 2.0.0)
@@ -95,10 +99,10 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     dry-inflector (0.1.2)
     erubi (1.8.0)
-    excon (0.65.0)
+    excon (0.66.0)
     execjs (2.7.0)
-    faker (2.1.0)
-      i18n (>= 0.7)
+    faker (2.1.2)
+      i18n (>= 0.8)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     ffi (1.11.1)
@@ -329,7 +333,7 @@ GEM
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
-    minitest-reporters (1.3.6)
+    minitest-reporters (1.3.8)
       ansi
       builder
       minitest (>= 5.0)
@@ -340,7 +344,7 @@ GEM
     nenv (0.3.0)
     netrc (0.11.0)
     nio4r (2.4.0)
-    nokogiri (1.10.3)
+    nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     notiffany (0.1.3)
       nenv (~> 0.1)
@@ -350,9 +354,13 @@ GEM
     ovirt-engine-sdk (4.3.0)
       json (>= 1, < 3)
     pg (1.1.4)
+    popper_js (1.14.5)
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
+    pry-byebug (3.7.0)
+      byebug (~> 11.0)
+      pry (~> 0.10)
     public_suffix (3.1.1)
     puma (3.12.1)
     rack (2.0.7)
@@ -378,7 +386,7 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.1.0)
+    rails-html-sanitizer (1.2.0)
       loofah (~> 2.2, >= 2.2.2)
     rails-ujs (0.1.0)
       railties (>= 3.1)
@@ -418,8 +426,8 @@ GEM
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    sass-rails (5.0.7)
-      railties (>= 4.0.0, < 6)
+    sass-rails (5.1.0)
+      railties (>= 5.2.0)
       sass (~> 3.1)
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
@@ -427,6 +435,12 @@ GEM
     sassc (2.0.1)
       ffi (~> 1.9)
       rake
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     selenium-webdriver (3.142.3)
       childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
@@ -486,7 +500,8 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (>= 3.1.12)
   bootsnap (>= 1.1.0)
-  bootstrap-sass (>= 3.4.1)
+  bootstrap (~> 4.3.1)
+  bootstrap-sass
   bootstrap-will_paginate (>= 1.0.0)
   byebug
   capybara
@@ -504,6 +519,7 @@ DEPENDENCIES
   minitest
   minitest-reporters (>= 1.1.14)
   pg (>= 0.20.0)
+  pry-byebug
   puma (~> 3.11)
   rails (~> 5.2.3)
   rails-controller-testing (>= 1.0.2)
