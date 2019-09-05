@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  attr_accessor :remember_token, :activation_token, :reset_token
+
   has_many :microposts, dependent: :destroy
   has_many :active_relationships, class_name: "Relationship",
                                     foreign_key: "follower_id",
@@ -12,7 +14,6 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships
 
 
-  attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email
   before_create :create_activation_digest
 
@@ -76,7 +77,9 @@ class User < ApplicationRecord
   end
 
   def feed
-    Micropost.where("user_id = ? ", id)
+    # Micropost.where("user_id IN (?) OR user_id = ?", following_ids, id)
+    following_ids = "SELECT followed_id FROM relationships WHERE follower_id = :user_id"
+    Micropost.where("user_id IN (#{following_ids}) OR user_id = :user_id", user_id: id)
   end
 
   def follow(other_user)
