@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Micropost < ApplicationRecord
   belongs_to :user
   default_scope -> { order(created_at: :desc) }
@@ -9,9 +11,7 @@ class Micropost < ApplicationRecord
 
   private
 
-    def picture_size
-      if picture.size > 5.megabytes
-        errors.add(:picture, "should be less than 5MB!")
-      end
-    end
+  def picture_size
+    errors.add(:picture, 'should be less than 5MB!') if picture.size > 5.megabytes
+  end
 end
